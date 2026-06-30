@@ -16,7 +16,6 @@ const TodoItem = (props) => {
             id={id}
             type="checkbox"
             checked={isDone}
-            readOnly
             onChange={({target}) =>
               onTaskCompleteChange(id, target.checked)}
           />

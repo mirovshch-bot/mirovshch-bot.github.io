@@ -13,7 +13,7 @@ const TodoInfo = (props) => {
             <div className="todo__total-tasks">
                 Done {done} from {total}
             </div>
-            {/* {hasTasks && ( */}
+            {hasTasks && (
                 <button
                     className="todo__delete-all-button"
                     type="button"
@@ -21,7 +21,7 @@ const TodoInfo = (props) => {
                 >
                     Delete all
                 </button>
-            {/* )} */}
+            )}
         </div>
     )
 }
