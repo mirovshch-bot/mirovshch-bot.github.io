@@ -1,45 +1,40 @@
 import TodoItem from "./TodoItem"
+import { memo, useContext } from "react"
+import { TasksContext } from "../context/TasksContext"
 
-const TodoList = (props) => {
+const TodoList = () => {
 
-    const {
-      tasks = [],
-      filteredTasks,
-      firstIncompleteTaskRef,
-      firstIncompleteTaskID,
-      onDeleteTaskButtonClick,
-      onTaskCompleteChange,
-    } = props
+  const {
+      tasks,
+      filteredTasks
+  } = useContext(TasksContext)
 
-    const hasTasks = tasks.length > 0
-    const isEmptyFilteredTasks = filteredTasks?.length === 0
+  const hasTasks = tasks.length > 0
+  const isEmptyFilteredTasks = filteredTasks?.length === 0
 
-    if (!hasTasks) {
-      return (
-          <div className="todo__empty-message">There are no tasks yet</div>
-      )
-    }
-
-    if (hasTasks && isEmptyFilteredTasks) {
-      return (
-        <div className="todo__empty-message">Tasks not found</div>
-      )
-    }
-
+  if (!hasTasks) {
     return (
-        <ul className="todo__list">
-          {(filteredTasks ?? tasks).map((task) => (
-            <TodoItem
-              className="todo__item"
-              key={task.id}
-              ref={task.id === firstIncompleteTaskID ? firstIncompleteTaskRef : null}
-              onDeleteTaskButtonClick={onDeleteTaskButtonClick}
-              onTaskCompleteChange={onTaskCompleteChange}
-              {...task}
-            />
-          ))}
-        </ul>
+        <div className="todo__empty-message">There are no tasks yet</div>
     )
+  }
+
+  if (hasTasks && isEmptyFilteredTasks) {
+    return (
+      <div className="todo__empty-message">Tasks not found</div>
+    )
+  }
+
+  return (
+      <ul className="todo__list">
+        {(filteredTasks ?? tasks).map((task) => (
+          <TodoItem
+            className="todo__item"
+            key={task.id}
+            {...task}
+          />
+        ))}
+      </ul>
+  )
 }
 
 export default TodoList

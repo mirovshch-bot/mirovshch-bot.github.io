@@ -1,14 +1,16 @@
+import { useContext } from "react"
 import Button from "./Button"
 import Field from "./Field"
+import { TasksContext } from "../context/TasksContext"
 
-const AddTaskForm = (props) => {
+const AddTaskForm = () => {
 
     const {
         addTask,
         newTaskTitle,
         setNewTaskTitle,
-        NewTaskInputRef,
-    } = props
+        newTaskInputRef,
+    } = useContext(TasksContext)
 
     const onSubmit = (event) => {
         event.preventDefault()
@@ -25,7 +27,7 @@ const AddTaskForm = (props) => {
                 id="new-task"
                 value={newTaskTitle}
                 onInput={(event) => setNewTaskTitle(event.target.value)}
-                ref={NewTaskInputRef}
+                ref={newTaskInputRef}
             />
             <Button type="submit">Add</Button>
         </form>
