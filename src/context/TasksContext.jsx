@@ -1,89 +1,30 @@
-import { createContext, useState, useRef, useCallback, useEffect, useMemo } from 'react'
+import { createContext } from 'react'
+import useTasks from '../hooks/useTasks'
+import useIncompleteTaskScroll from '../hooks/useIncompleteTaskScroll'
 
 export const TasksContext = createContext({})
 
 export const TasksProvider = (props) => {
     const { children } = props
 
-    const [tasks, setTasks] = useState( () => {
-        const savedTasks = localStorage.getItem('tasks')
+ const {
+    tasks,
+    filteredTasks,
+    deleteTask,
+    deleteAllTasks,
+    toggleTaskComplete,
+    newTaskTitle,
+    setNewTaskTitle,
+    searchQuery,
+    setSearchQuery,
+    newTaskInputRef,
+    addTask,
+ } = useTasks()
 
-        if (savedTasks) {
-            return JSON.parse(savedTasks)
-        }
-
-        return [
-            {id: 'task-1', title: 'Купить молоко', isDone: false},
-            {id: 'task-2', title: 'Погладить кота', isDone: true},
-        ]
-    })
-
-    const [newTaskTitle, setNewTaskTitle] = useState('')
-
-    const [searchQuery, setSearchQuery] = useState('')
-        
-    const newTaskInputRef = useRef(null)
-
-    const firstIncompleteTaskRef = useRef(null)
-
-    const firstIncompleteTaskID = tasks.find(({ isDone }) => !isDone)?.id
-
-    const deleteAllTasks = useCallback(() => {
-        const isConfirmed = confirm('Are you sure that you want to delete all the tasks?')
-
-        if (isConfirmed) {
-            setTasks([])
-        }
-    }, [])
-
-    const deleteTask = useCallback((taskID) => {
-        setTasks(prevTasks =>
-            prevTasks.filter((task) => task.id !== taskID)
-        )
-    }, [tasks])
-
-    const toggleTaskComplete = useCallback((taskID, isDone) => {
-        setTasks(prevTasks =>
-            prevTasks.map((task) => {
-                if (task.id === taskID) {
-                    return {...task, isDone}
-                }   
-                return task 
-            })
-        )
-    }, [tasks])
-
-    const addTask = useCallback(() => {      
-        if (newTaskTitle.trim().length > 0) {
-            const newTask = {
-                id: crypto?.randomUUID() ?? Date.now().toString(),
-                title: newTaskTitle,
-                isDone: false,
-            };
-
-            setTasks(prevTasks => [...prevTasks, newTask]);
-            setNewTaskTitle('');
-            setSearchQuery('');
-            newTaskInputRef.current.focus();
-        }
-    }, [newTaskTitle]);
-
-    useEffect( () => {
-        localStorage.setItem('tasks', JSON.stringify(tasks))
-    }, [tasks])
-
-    useEffect( () => {
-        newTaskInputRef.current.focus()
-    }, [])
-
-    
-    const filteredTasks = useMemo(() => {
-        const clearSearchQuery = searchQuery.trim().toLowerCase()
-        
-        return clearSearchQuery.length > 0
-        ? tasks.filter(({ title }) => title.toLowerCase().includes(clearSearchQuery))
-        : null
-    }, [searchQuery, tasks])
+ const {
+    firstIncompleteTaskRef,
+    firstIncompleteTaskID,
+ } = useIncompleteTaskScroll(tasks)
 
     return (
         <TasksContext.Provider 
@@ -95,7 +36,6 @@ export const TasksProvider = (props) => {
                 deleteTask,
                 deleteAllTasks,
                 toggleTaskComplete,
-
                 newTaskTitle,
                 setNewTaskTitle,
                 searchQuery,
