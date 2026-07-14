@@ -1,3 +1,8 @@
+import Project1 from '../assets/images/Project1.png'
+import Project2 from '../assets/images/Project2.png'
+import Project3 from '../assets/images/Project3.png'
+import Project4 from '../assets/images/Project4.png'
+
 const Portfolio = () => {
     return (
       <div className="portfolio-section">
@@ -48,7 +53,7 @@ const Portfolio = () => {
                 <div className="projects-grid-element">
                   <img
                     className="projects-grid-element-image"
-                    src="/src/assets/images/Project1.png"
+                    src={Project1}
                   />
                   <div className="projects-grid-element-name">
                     <div
@@ -75,7 +80,7 @@ const Portfolio = () => {
                 <div className="projects-grid-element">
                   <img
                     className="projects-grid-element-image"
-                    src="/src/assets/images/Project2.png"
+                    src={Project2}
                   />
                   <div className="projects-grid-element-name">
                     <div className="front-arrow-3"
@@ -104,7 +109,7 @@ const Portfolio = () => {
                 <div className="projects-grid-element">
                   <img
                     className="projects-grid-element-image"
-                    src="/src/assets/images/Project3.png"
+                    src={Project3}
                   />
                   <div className="projects-grid-element-name">
                     <div
@@ -132,7 +137,7 @@ const Portfolio = () => {
                 </div>
                 <div className="projects-grid-element">
                   <img className="projects-grid-element-image"
-                    src="/src/assets/images/Project4.png"
+                    src={Project4}
                   />
                   <div className="projects-grid-element-name">
                     <div
