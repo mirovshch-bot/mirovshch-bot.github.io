@@ -1,0 +1,51 @@
+.front-section {
+    align-self: stretch;
+    height: 100vh;
+    padding-block: 37px;
+    padding-inline: 60px;
+    position: relative;
+    background-image: url('/src/assets/images/FrontSectionImage.jpg');
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-gray-3);
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.front-credits {
+    width:100%;
+    justify-content:space-between;
+    align-items:flex-start;
+    display:flex;
+}
+
+.front-credits-code {
+    color: var(--color-white);
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 500px;
+    word-wrap: break-word;
+}
+
+.front-credits-about {
+    width:33%;
+    text-align:right;
+    color:var(--color-white);
+    font-size:20px;
+    font-family:Inter;
+    font-weight:300;
+    word-wrap:break-word;
+}
+
+.front-profession {
+    color:var(--color-white);
+    font-size:clamp(100px, 11vw, 200px);
+    font-family:Inter;
+    font-weight:500;
+    word-wrap:break-word;
+    line-height: 1;
+    text-shadow: 0px 0px 100px rgba(0, 0, 0, 0.5);
+}

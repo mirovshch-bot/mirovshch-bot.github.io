@@ -1,0 +1,10 @@
+.home {
+    width: 100vw;
+    max-width: 1920px;
+    background: var(--color-white);
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    display: inline-flex;
+}

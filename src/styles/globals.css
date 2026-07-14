@@ -3,12 +3,11 @@ body {
   justify-content: center;
   align-items: start;
   min-height: 100vh;
-  padding: 100px 30px;
   font-family: 'Inter', sans-serif;
   background-color: var(--color-gray-1);
 }
 
-input,
+/* input,
 label,
 button {
   transition-duration: var(--transition-duration);
@@ -18,4 +17,5 @@ button {
   outline: 2px dashed var(--color-black);
   outline-offset: 4px;
   transition-duration: 0s !important;
-}
+} */
+

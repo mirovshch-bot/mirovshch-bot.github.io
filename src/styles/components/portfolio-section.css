@@ -1,0 +1,212 @@
+.portfolio-section {
+    align-self:stretch;
+    padding-inline:clamp(35px, 7vw, 133px);
+    padding-block:100px;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    gap:100px;
+    display:flex;
+}
+
+.portfolio-credits {
+    align-self:stretch;
+    justify-content:space-between;
+    align-items: stretch;
+    display:flex;
+    gap: 20px;
+}
+
+.portfolio-credits-about {
+    width:60%;
+    color:var(--color-black);
+    font-size:40px;
+    font-family:DM Sans;
+    font-weight:500;
+    word-wrap:break-word;
+}
+
+.portfolio-credits-more {
+    width:30%;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    padding-block: 10px;
+}
+
+.portfolio-credits-more-text {
+    text-align:right;
+    color:var(--color-gray-5);
+    font-size:22px;
+    font-family:DM Sans;
+    font-weight:300;
+    word-wrap:break-word;
+}
+
+.portfolio-credits-more-div {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.portfolio-credits-more-link {
+    color:var(--color-black);
+    font-size: clamp(22px, 2vw, 30px);
+    font-family:DM Sans;
+    font-weight:400;
+    overflow-wrap: break-word;
+    padding-right: 12px;
+    line-height: 1;
+}
+
+.front-arrow-2 {
+    display: inline-block;
+    padding-top: 9px;
+}
+
+.portfolio-grid {
+    align-self:stretch;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    gap:66px;
+    display:flex;
+}
+
+.portfolio-grid-header {
+    align-self:stretch;
+    justify-content:space-between;
+    align-items:center;
+    display:flex;
+    gap: 10px;
+}
+
+.portfolio-grid-header-name {
+    color:var(--color-black);
+    font-size:clamp(50px, 6vw, 100px);
+    font-family:Inter;
+    font-weight:500;
+    width: 60%;
+    word-wrap:break-word;
+}
+
+.portfolio-grid-header-text {
+    width:30%;
+    color:var(--color-black);
+    font-size:clamp(16px, 1.2vw, 22px);
+    font-family:DM Sans;
+    font-weight:300;
+    word-wrap:break-word;
+}
+
+.projects-grid {
+    width: 100%;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.projects-grid-row {
+    width: 100%;
+    flex-direction:column;
+    gap:10px;
+    display:flex;
+}
+
+.projects-grid-row-row {
+    width: 100%;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(400px, 1fr)
+        );
+    gap:40px;
+    display:grid;
+}
+
+.projects-grid-element {
+    width:100%;
+    align-self:stretch;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+    gap:30px;
+    display:flex;
+}
+
+.projects-grid-element-image {
+    width: 100%;
+    aspect-ratio: 807/470;
+    border-radius:42px;
+    max-height: 470px;
+    object-fit: cover;
+}
+
+.projects-grid-element-name {
+    width: 100%;
+    max-height:68px;
+    align-items:center;
+    gap:13px;
+    display:flex;
+}
+
+.projects-grid-element-name-text {
+    --font-size: clamp(24px, 2.5vw, 40px);
+
+    width:100%;
+    color:var(--color-black);
+    font-size:var(--font-size);
+    font-family:Inter;
+    font-weight:400;
+    word-wrap:break-word;
+    padding-bottom: calc(var(--font-size)/3);
+}
+
+.projects-grid-explore-button-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.projects-grid-explore-button {
+    padding-left:34px;
+    padding-right:34px;
+    padding-top:13px;
+    padding-bottom:13px;
+    overflow:hidden;
+    border-radius:37px;
+    outline:1px var(--color-gray-3) solid;
+    outline-offset:-1px;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    gap:10px;
+    display:flex;
+}
+
+.projects-grid-explore-button-text-holder {
+    width:147px;
+    height:24px;
+    position:relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.projects-grid-explore-button-text {
+    /* left:22px;
+    position:absolute; */
+    color:var(--color-black);
+    font-size:20px;
+    font-family:Inter;
+    font-weight:400;
+    word-wrap:break-word;
+}
+
+.explore-button-dot {
+    
+}

@@ -1,11 +1,16 @@
-import Todo from "./components/Todo"
-import { TasksProvider } from "./context/TasksContext"
+import Contacts from "./components/Contacts"
+import Footer from "./components/Footer"
+import FrontSection from "./components/FrontSection"
+import Portfolio from "./components/Portfolio"
 
 const App = () => {
   return (
-    <TasksProvider>
-      <Todo />
-    </TasksProvider>
+    <div className="home">
+      <FrontSection></FrontSection>
+      <Portfolio></Portfolio>
+      <Contacts></Contacts>
+      <Footer></Footer>
+    </div>
   )
 }
 
