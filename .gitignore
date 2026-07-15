@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Build files
+dist/
+dist-ssr/
+*.local
+
+# Dependencies
+node_modules/

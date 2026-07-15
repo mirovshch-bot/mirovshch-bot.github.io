@@ -4,7 +4,7 @@
     padding-block: 37px;
     padding-inline: 60px;
     position: relative;
-    background-image: url('/images/FrontSectionImage.jpg');
+    background-image: url('../../assets/images/FrontSectionImage.jpg');
     background-repeat: no-repeat; 
     background-size: cover;
     background-position: center;
