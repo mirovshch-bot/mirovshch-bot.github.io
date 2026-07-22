@@ -1,54 +1,230 @@
+/* ----- Блок: footer-section (корневой контейнер) ----- */
 .footer-section {
-    width: 100%;
-    padding-inline: 40px;
-    padding-block: 60px;
-    background:var(--color-black);
-    display: flex;
+  width: 100%;
+  padding-inline: 40px;
+  padding-block: 60px;
+  background: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* ----- Элемент: top (верхняя часть) ----- */
+.footer-section__top {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ----- Элемент: text (текст) ----- */
+.footer-section__text {
+  color: var(--color-white);
+  font-size: 100px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  word-wrap: break-word;
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* ----- Элемент: circle (круг) ----- */
+.footer-section__circle {
+  min-width: 142px;
+  width: 142px;
+  height: 142px;
+  background: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-section__circle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.15);
+}
+
+/* ----- Элемент: arrow (стрелка) ----- */
+.footer-section__arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.footer-section__circle:hover .footer-section__arrow {
+  transform: translateY(-4px);
+}
+
+.footer-section__arrow svg {
+  width: 73px;
+  height: 73px;
+}
+
+/* ----- Элемент: brand (бренд) ----- */
+.footer-section__brand {
+  width: 100%;
+  color: var(--color-white);
+  font-size: 300px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: 6px;
+  line-height: 1;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+
+/* ============================================================
+   АДАПТИВНОСТЬ
+   ============================================================ */
+
+@media (max-width: 1200px) {
+  .footer-section {
+    padding-inline: 30px;
+    padding-block: 48px;
+  }
+
+  .footer-section__text {
+    font-size: 72px;
+  }
+
+  .footer-section__circle {
+    min-width: 120px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .footer-section__arrow svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  .footer-section__brand {
+    font-size: 220px;
+    letter-spacing: 4px;
+  }
+}
+
+@media (max-width: 992px) {
+  .footer-section {
+    padding-inline: 24px;
+    padding-block: 40px;
+  }
+
+  .footer-section__text {
+    font-size: 56px;
+  }
+
+  .footer-section__circle {
+    min-width: 100px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .footer-section__arrow svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  .footer-section__brand {
+    font-size: 160px;
+    letter-spacing: 3px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-section {
+    padding-inline: 20px;
+    padding-block: 32px;
+    gap: 16px;
+  }
+
+  .footer-section__top {
     flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-start;
+    gap: 16px;
+  }
+
+  .footer-section__text {
+    font-size: 40px;
+  }
+
+  .footer-section__circle {
+    min-width: 80px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .footer-section__arrow svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer-section__brand {
+    font-size: 120px;
+    letter-spacing: 2px;
+  }
 }
 
-.foter-upper-area {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+@media (max-width: 520px) {
+  .footer-section {
+    padding-inline: 16px;
+    padding-block: 24px;
+    gap: 12px;
+  }
+
+  .footer-section__text {
+    font-size: 28px;
+  }
+
+  .footer-section__circle {
+    min-width: 64px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .footer-section__arrow svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer-section__brand {
+    font-size: 80px;
+    letter-spacing: 2px;
+  }
 }
 
-.footer-text {
-    color:var(--color-white);
-    font-size:100px;
-    font-family:DM Sans;
-    font-weight:300;
-    word-wrap:break-word;
-}
+@media (max-width: 400px) {
+  .footer-section {
+    padding-inline: 12px;
+    padding-block: 20px;
+  }
 
-.footer-graphics {
-    width:100%;
-    color:var(--color-white);
-    font-size:300px;
-    font-family:DM Sans;
-    font-weight:500;
-    letter-spacing:6px;
-    line-height: 1;
-    overflow-wrap: anywhere;
-}
+  .footer-section__text {
+    font-size: 22px;
+  }
 
+  .footer-section__circle {
+    min-width: 56px;
+    width: 56px;
+    height: 56px;
+  }
 
-.footer-elipse {
-    min-width: 142px;
-    width:142px;
-    height:142px;
-    background:var(--color-white);
-    border-radius:9999px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+  .footer-section__arrow svg {
+    width: 28px;
+    height: 28px;
+  }
 
-.footer-arrow {
-    
+  .footer-section__brand {
+    font-size: 60px;
+    letter-spacing: 1px;
+  }
 }

@@ -1,46 +1,49 @@
 const Contacts = () => {
-    return (
-        <div className="contacts-section">
-            <div className="contacts-section-text-holder">
-                <div className="contacts-section-text-small">
-                    That&apos;s all for now.
-                </div>
-                <div className="contacts-section-text-big">
-                    Got a project in mind?
-                </div>
-                <div className="contacts-section-text-big">
-                    Let’s talk
-                </div>
-            </div>
-            <div className="contacts-line">
-                <div className="contacts-elipse-holder">
-                    <div className="contacts-elipse">
-                        <div className="contacts-elipse-text">
-                            Get in touch
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="contacts-holder">
-                <div className="contact-holder">
-                    <div className="contact-name">
-                    Email:
-                    </div>
-                    <div className="contact-text">
-                    mirovshch@gmail.com
-                    </div>
-                </div>
-                <div className="contact-holder">
-                    <div className="contact-name">
-                    Phone:
-                    </div>
-                    <div className="contact-text">
-                    +7 (953) 320-71-26
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
+  return (
+    <section className="contacts-section">
+      <header className="contacts-section__header">
+        <p className="contacts-section__subtitle">
+          That's all for now.
+        </p>
+        <h2 className="contacts-section__title">
+          Got a project in mind?
+        </h2>
+        <h2 className="contacts-section__title">
+          Let's talk
+        </h2>
+      </header>
 
-export default Contacts
+      <div className="contacts-section__divider">
+        <div className="contacts-section__divider-line" />
+        <div className="contacts-section__cta-wrapper">
+          <div className="contacts-section__cta-circle">
+            <span className="contacts-section__cta-text">
+              Get in touch
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div className="contacts-section__info">
+        <div className="contacts-section__contact">
+          <span className="contacts-section__contact-label">
+            Email:
+          </span>
+          <a href="mailto:mirovshch@gmail.com" className="contacts-section__contact-value">
+            mirovshch@gmail.com
+          </a>
+        </div>
+        <div className="contacts-section__contact">
+          <span className="contacts-section__contact-label">
+            Phone:
+          </span>
+          <a href="tel:+79533207126" className="contacts-section__contact-value">
+            +7 (953) 320-71-26
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contacts;
