@@ -60,10 +60,6 @@
   transition: transform 0.3s ease;
 }
 
-.footer-section__circle:hover .footer-section__arrow {
-  transform: translateY(-4px);
-}
-
 .footer-section__arrow svg {
   width: 73px;
   height: 73px;

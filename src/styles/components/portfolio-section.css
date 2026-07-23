@@ -61,6 +61,22 @@
   justify-content: flex-end;
   align-items: center;
   margin-top: 20px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.portfolio-section__more-link-wrapper:hover
+.portfolio-section__more-link {
+  opacity: 0.6;
+}
+
+.portfolio-section__more-link-wrapper:hover
+.portfolio-section__more-arrow {
+  transform: translateX(4px);
+}
+
+.portfolio-section__more-link-wrapper:active {
+  transform: scale(0.95);
 }
 
 /* ----- Элемент: more-link (ссылка "Подробнее") ----- */
@@ -70,26 +86,19 @@
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   overflow-wrap: break-word;
-  padding-right: 12px;
+  padding-right: 0.4em;
   line-height: 1;
   cursor: pointer;
   transition: opacity 0.2s ease;
 }
 
-.portfolio-section__more-link:hover {
-  opacity: 0.6;
-}
-
 /* ----- Элемент: more-arrow (стрелка) ----- */
 .portfolio-section__more-arrow {
-  display: inline-block;
-  padding-top: 9px;
+  display: flex;
+  /* padding-top: 7px; */
   cursor: pointer;
+  align-items: center;
   transition: transform 0.2s ease;
-}
-
-.portfolio-section__more-arrow:hover {
-  transform: translateX(4px);
 }
 
 /* ----- Элемент: content (контент) ----- */
@@ -159,6 +168,11 @@
   width: 100%;
   overflow: hidden;
   border-radius: 42px;
+  transition: transform 0.1s ease;
+}
+
+.portfolio-section__project-image-wrapper:active {
+  transform: scale(0.95);
 }
 
 /* ----- Элемент: project-image (изображение) ----- */
@@ -169,6 +183,7 @@
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .portfolio-section__project-image:hover {
@@ -177,11 +192,27 @@
 
 /* ----- Элемент: project-title-wrapper (обертка названия) ----- */
 .portfolio-section__project-title-wrapper {
-  width: 100%;
+  /* width: 100%; */
   max-height: 68px;
   align-items: center;
   gap: 13px;
   display: flex;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.portfolio-section__project-title-wrapper:hover
+.portfolio-section__project-title {
+  opacity: 0.6;
+}
+
+.portfolio-section__project-title-wrapper:hover
+.portfolio-section__project-arrow {
+  transform: translateX(4px);
+}
+
+.portfolio-section__project-title-wrapper:active {
+  transform: scale(0.95);
 }
 
 /* ----- Элемент: project-arrow (стрелка проекта) ----- */
@@ -189,11 +220,12 @@
   display: inline-flex;
   align-items: center;
   flex-shrink: 0;
+  transition: transform 0.2s ease
 }
 
 /* ----- Элемент: project-title (название проекта) ----- */
 .portfolio-section__project-title {
-  width: 100%;
+  /* width: 100%; */
   color: var(--color-black);
   font-size: 40px;
   font-family: Inter, sans-serif;
@@ -201,8 +233,8 @@
   word-wrap: break-word;
   line-height: 1.1;
   margin: 0;
-  padding-bottom: 13px;
-}
+  transition: opacity 0.2s ease
+} 
 
 /* ----- Элемент: explore-wrapper (обертка кнопки) ----- */
 .portfolio-section__explore-wrapper {
@@ -228,11 +260,16 @@
   align-items: center;
   gap: 10px;
   transition: all 0.2s ease;
+  transition: transform 0.1s ease;
 }
 
 .portfolio-section__explore-button:hover {
-  background: var(--color-gray-3);
+  opacity: 0.6;
   outline-color: var(--color-black);
+}
+
+.portfolio-section__explore-button:active {
+  transform: scale(0.95);
 }
 
 /* ----- Элемент: explore-dot (точка) ----- */
@@ -362,7 +399,6 @@
 
   .portfolio-section__project-title {
     font-size: 28px;
-    padding-bottom: 10px;
   }
 
   .portfolio-section__project-image {
@@ -418,7 +454,6 @@
 
   .portfolio-section__project-title {
     font-size: 24px;
-    padding-bottom: 8px;
   }
 
   .portfolio-section__project-image-wrapper {
@@ -496,7 +531,6 @@
 
   .portfolio-section__project-title {
     font-size: 20px;
-    padding-bottom: 6px;
   }
 
   .portfolio-section__project-image-wrapper {
@@ -545,7 +579,6 @@
 
   .portfolio-section__more-link {
     font-size: 16px;
-    padding-right: 8px;
   }
 
   .portfolio-section__more-arrow svg {

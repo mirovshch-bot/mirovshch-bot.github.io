@@ -1,0 +1,75 @@
+import Project1 from '../assets/images/Project1.png'
+import Project2 from '../assets/images/Project2.png'
+import Project3 from '../assets/images/Project3.png'
+import Project4 from '../assets/images/Project4.png'
+import ProjectTodo from '../assets/images/ProjectTodo.png'
+
+const ProjectItem = (props) => {
+    const {
+        projectName,
+    } = props
+
+    const projects = {
+        learnlogicify: {
+            id: 1,
+            title: "Learnlogicify Landing Page",
+            image: Project1
+        },
+        winzee: {
+            id: 2,
+            title: "Winzee Web Chat application",
+            image: Project2
+        },
+        chatGPT: {
+            id: 3,
+            title: "ChatGPT clone",
+            image: Project3
+        },
+        gemini: {
+            id: 4,
+            title: "Gemini Clone",
+            image: Project4
+        },
+        todo: {
+            id: 5,
+            title: "Todo List",
+            image: ProjectTodo
+        }
+    }
+
+    const project = projects[projectName]
+    
+    return (
+        <article key={project.id} className="portfolio-section__project">
+            <div className="portfolio-section__project-image-wrapper">
+            <img
+                className="portfolio-section__project-image"
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+            />
+            </div>
+            <div className="portfolio-section__project-title-wrapper">
+            <span className="portfolio-section__project-arrow">
+                <svg
+                width="68"
+                height="68"
+                viewBox="0 0 68 68"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                >
+                <path
+                    d="M35.8798 25.3055C35.5189 24.8874 34.8875 24.8411 34.4694 25.2021C34.0514 25.563 34.0051 26.1944 34.366 26.6125L35.1229 25.959L35.8798 25.3055ZM41.8899 33.7971L42.6692 34.4238C42.9717 34.0476 42.9623 33.509 42.6468 33.1436L41.8899 33.7971ZM34.6213 41.2399C34.2752 41.6703 34.3435 42.2997 34.7739 42.6458C35.2043 42.992 35.8337 42.9236 36.1799 42.4933L35.4006 41.8666L34.6213 41.2399ZM25.9649 33.0749C25.4127 33.0845 24.9728 33.54 24.9825 34.0922C24.9921 34.6444 25.4476 35.0842 25.9998 35.0746L25.9823 34.0748L25.9649 33.0749ZM35.1229 25.959L34.366 26.6125L41.133 34.4506L41.8899 33.7971L42.6468 33.1436L35.8798 25.3055L35.1229 25.959ZM41.8899 33.7971L41.1106 33.1704L34.6213 41.2399L35.4006 41.8666L36.1799 42.4933L42.6692 34.4238L41.8899 33.7971ZM41.8899 33.7971L41.8725 32.7972L25.9649 33.0749L25.9823 34.0748L25.9998 35.0746L41.9074 34.7969L41.8899 33.7971ZM46.8842 46.4398L46.1648 45.7452C39.6428 52.4989 28.8806 52.6868 22.1269 46.1647L21.4322 46.8841L20.7375 47.6034C28.2859 54.8928 40.3142 54.6828 47.6035 47.1345L46.8842 46.4398ZM21.4322 46.8841L22.1269 46.1647C15.3731 39.6427 15.1852 28.8805 21.7073 22.1268L20.9879 21.4321L20.2686 20.7375C12.9793 28.2858 13.1892 40.3141 20.7375 47.6034L21.4322 46.8841ZM20.9879 21.4321L21.7073 22.1268C28.2293 15.373 38.9915 15.1852 45.7452 21.7072L46.4399 20.9879L47.1346 20.2685C39.5862 12.9792 27.5579 13.1891 20.2686 20.7375L20.9879 21.4321ZM46.4399 20.9879L45.7452 21.7072C52.499 28.2292 52.6869 38.9914 46.1648 45.7452L46.8842 46.4398L47.6035 47.1345C54.8928 39.5862 54.6829 27.5579 47.1346 20.2685L46.4399 20.9879Z"
+                    fill="black"
+                />
+                </svg>
+            </span>
+            <h3 className="portfolio-section__project-title">
+                {project.title}
+            </h3>
+            </div>
+        </article>
+    )
+}
+
+export default ProjectItem
