@@ -1,23 +1,27 @@
 import { ProjectCard } from '../../../entities/project'
 import { getProjectByName } from '../model/projects'
 
+export const projectNames = [
+    'todo', 
+    'learnlogicify', 
+    'winzee', 
+    'chatGPT', 
+    'gemini'
+]
+
 const ProjectList = (props) => {
     const {
-        styles
+        styles,
+        showAllProjects
     } = props
-
-    const projectNames = [
-        'todo', 
-        'learnlogicify', 
-        'winzee', 
-        'chatGPT', 
-        'gemini'
-    ]
 
     return (
         <div className={styles.grid}>
-            {projectNames.map((name) => {
+            {projectNames.map((name, index) => {
                 const project = getProjectByName(name)
+
+                const isHidden = index >= 4 && !showAllProjects
+
                 return (
                     <ProjectCard
                         title={project.title}
@@ -25,6 +29,7 @@ const ProjectList = (props) => {
                         onClick={() => {console.log("click")}}
                         key={name}
                         styles={styles}
+                        isHidden={isHidden}
                     /> 
                 )
             })}

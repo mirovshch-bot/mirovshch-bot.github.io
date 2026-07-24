@@ -1,7 +1,42 @@
 import styles from './PortfolioSection.module.scss'
-import { ProjectList } from '../../../features/projects'
+import { ProjectList, projectNames } from '../../../features/projects'
+import { useState } from 'react'
+import { useRef } from 'react';
+import { useEffect } from 'react';
 
-export const PortfolioSection = () => {
+const PortfolioSection = () => {
+  const [showAllProjects, setShowAllProjects] = useState(false)
+  const exploreButtonRef = useRef(null)
+
+  const toggleProjects = () => {
+    const newState = !showAllProjects
+    setShowAllProjects(newState)
+
+    if (!newState) {
+      setTimeout(() => {
+        if (exploreButtonRef.current) {
+          exploreButtonRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+          })
+        }
+      }, 150)
+    }
+
+    if (newState) {
+      setTimeout(() => {
+        if (exploreButtonRef.current) {
+          exploreButtonRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+          })
+        }
+      })
+    }
+  }
+
+  const showButton = projectNames.length > 4
+  
   return (
     <section className={styles.portfolioSection}>
       <header className={styles.header}>
@@ -48,26 +83,35 @@ export const PortfolioSection = () => {
           </p>
         </div>
 
-        <ProjectList styles={styles}/>
+        <ProjectList
+          styles={styles}
+          showAllProjects={showAllProjects}
+        />
 
-        <div className={styles.exploreWrapper}>
-          <button className={styles.exploreButton} type="button">
-            <span className={styles.exploreDot}>
-              <svg
-                width="10"
-                height="10"
-                viewBox="0 0 10 10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+        {showButton && (<div className={styles.exploreWrapper}>
+            <button
+              ref={exploreButtonRef}
+              className={styles.exploreButton}
+              type="button"
+              onClick={toggleProjects}
               >
-                <rect width="10" height="10" rx="5" fill="black" />
-              </svg>
-            </span>
-            <span className={styles.exploreText}>
-              Explore more
-            </span>
-          </button>
-        </div>
+              <span className={styles.exploreDot}>
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="10" height="10" rx="5" fill="black" />
+                </svg>
+              </span>
+              <span className={styles.exploreText}>
+                {showAllProjects ? 'Hide' : 'Explore more'}
+              </span>
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

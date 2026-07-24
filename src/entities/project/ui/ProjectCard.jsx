@@ -3,11 +3,12 @@ const ProjectCard = (props) => {
     title,
     image, 
     onClick, 
-    styles
+    styles,
+    isHidden = false
   } = props;
 
   return (
-    <article className={styles.project}>
+    <article className={`${styles.project} ${isHidden ? styles.visuallyHidden : ''}`}>
       <div className={styles.projectImageWrapper}>
         <img
           className={styles.projectImage}
