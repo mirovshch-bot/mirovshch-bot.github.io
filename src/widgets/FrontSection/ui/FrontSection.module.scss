@@ -1,0 +1,202 @@
+/* ----- Блок: frontSection (корневой контейнер) ----- */
+.frontSection {
+  align-self: stretch;
+  height: 100vh;
+  padding-block: 37px;
+  padding-inline: 60px;
+  position: relative;
+  background-image: url('../../../shared/assets/images/FrontSectionImage.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--color-gray-3);
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+/* ----- Элемент: header (шапка) ----- */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* ----- Элемент: brand (подпись) ----- */
+.brand {
+  color: var(--color-white);
+  font-size: 20px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+  flex-shrink: 0;
+}
+
+/* ----- Элемент: description (описание) ----- */
+.description {
+  max-width: 33%;
+  text-align: right;
+  color: var(--color-white);
+  font-size: 20px;
+  font-family: Inter, sans-serif;
+  font-weight: 300;
+  word-wrap: break-word;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  height: 40%;
+}
+
+/* ----- Элемент: title (заголовок профессии) ----- */
+.title {
+  color: var(--color-white);
+  font-size: 160px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+  line-height: 1;
+  text-shadow: 0px 0px 100px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  text-align: center;
+}
+
+/* ----- Адаптивность (в стиле SkillsPage) ----- */
+@media (max-width: 1200px) {
+  .frontSection {
+    padding-inline: 40px;
+    padding-block: 30px;
+  }
+
+  .description {
+    max-width: 45%;
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 140px;
+  }
+}
+
+@media (max-width: 992px) {
+  .frontSection {
+    padding-inline: 30px;
+    padding-block: 25px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .description {
+    max-width: 60%;
+    text-align: right;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 768px) {
+  .frontSection {
+    padding-inline: 20px;
+    padding-block: 20px;
+    height: 100vh;
+    min-height: 500px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  .description {
+    max-width: 80%;
+    font-size: 15px;
+    text-align: right;
+  }
+
+  .title {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 520px) {
+  .frontSection {
+    padding-inline: 16px;
+    padding-block: 16px;
+    height: 100vh;
+    min-height: 400px;
+    justify-content: flex-end;
+    gap: 40px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .brand {
+    font-size: 14px;
+    color: var(--color-black);
+  }
+
+  .description {
+    max-width: 100%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-black);
+  }
+
+  .titleWrapper {
+    display: flex;
+    align-items: center;
+    height: auto;
+    margin-bottom: 20%;
+  }
+
+  .title {
+    font-size: 52px;
+    color: var(--color-black);
+  }
+}
+
+@media (max-width: 400px) {
+  .frontSection {
+    padding-inline: 12px;
+    padding-block: 12px;
+    gap: 30px;
+    aspect-ratio: 9 / 15;
+    width: 100%;
+    height: auto;
+  }
+
+  .brand {
+    font-size: clamp(1px, 3vw, 14px);
+    color: var(--color-black);
+  }
+
+  .description {
+    font-size: clamp(1px, 3vw, 13px);
+    color: var(--color-black);
+  }
+
+  .title {
+    font-size: clamp(1px, 10vw, 40px);
+    color: var(--color-black)
+  }
+}

@@ -1,0 +1,351 @@
+/* ----- Блок: contacts-section (корневой контейнер) ----- */
+.contactsSection {
+  align-self: stretch;
+  padding-inline: 133px;
+  padding-block: 66px;
+  background: var(--color-white);
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 113px;
+  display: flex;
+}
+
+/* ----- Элемент: header (шапка) ----- */
+.header {
+  width: 60%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ----- Элемент: subtitle (подзаголовок) ----- */
+.subtitle {
+  color: var(--color-black);
+  font-size: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+/* ----- Элемент: title (заголовок) ----- */
+.title {
+  color: var(--color-black);
+  font-size: 77px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* ----- Элемент: divider (разделитель с CTA) ----- */
+.divider {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+/* ----- Элемент: divider-line (линия) ----- */
+.dividerLine {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-black);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ----- Элемент: cta-wrapper (обертка CTA) ----- */
+.ctaWrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ----- Элемент: ctaCircle (круглая кнопка) ----- */
+.ctaCircle {
+  width: 278px;
+  height: 278px;
+  background: var(--color-blue);
+  border-radius: 50%;
+  margin-right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.ctaCircle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ----- Элемент: ctaText (текст кнопки) ----- */
+.ctaText {
+  color: var(--color-white);
+  font-size: 24px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* ----- Элемент: info (контакты) ----- */
+.info {
+  width: 60%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 57px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ----- Элемент: contact (контакт) ----- */
+.contact {
+  width: 414px;
+  max-width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ----- Элемент: contactLabel (метка) ----- */
+.contactLabel {
+  color: var(--color-gray-4);
+  font-size: 16px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* ----- Элемент: contactValue (значение) ----- */
+.contactValue {
+  color: var(--color-black);
+  font-size: 24px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.contactValue:hover {
+  opacity: 0.6;
+}
+
+/* ============================================================
+   АДАПТИВНОСТЬ
+   ============================================================ */
+
+@media (max-width: 1200px) {
+  .contactsSection {
+    padding-inline: 60px;
+    padding-block: 50px;
+    gap: 80px;
+  }
+
+  .header {
+    width: 65%;
+  }
+
+  .title {
+    font-size: 60px;
+  }
+
+  .ctaCircle {
+    width: 220px;
+    height: 220px;
+  }
+
+  .ctaText {
+    font-size: 20px;
+  }
+
+  .info {
+    width: 65%;
+    gap: 40px;
+  }
+
+  .contact {
+    width: 320px;
+  }
+
+  .contactValue {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .contactsSection {
+    padding-inline: 40px;
+    padding-block: 40px;
+    gap: 60px;
+  }
+
+  .header {
+    width: 75%;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .ctaCircle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .ctaText {
+    font-size: 18px;
+  }
+
+  .info {
+    width: 75%;
+    gap: 32px;
+  }
+
+  .contact {
+    width: 280px;
+  }
+
+  .contactValue {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactsSection {
+    padding-inline: 24px;
+    padding-block: 32px;
+    gap: 48px;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .divider {
+    justify-content: center;
+  }
+
+  .dividerLine {
+    display: none;
+  }
+
+  .cta-wrapper {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .ctaCircle {
+    width: 160px;
+    height: 160px;
+  }
+
+  .ctaText {
+    font-size: 16px;
+  }
+
+  .info {
+    width: 100%;
+    gap: 24px;
+    flex-direction: column;
+  }
+
+  .contact {
+    width: 100%;
+  }
+
+  .contactLabel {
+    font-size: 14px;
+  }
+
+  .contactValue {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 520px) {
+  .contactsSection {
+    padding-inline: 16px;
+    padding-block: 24px;
+    gap: 36px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .ctaCircle {
+    width: 130px;
+    height: 130px;
+  }
+
+  .ctaText {
+    font-size: 14px;
+  }
+
+  .info {
+    gap: 20px;
+  }
+
+  .contactLabel {
+    font-size: 12px;
+  }
+
+  .contactValue {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .contactsSection {
+    padding-inline: 12px;
+    padding-block: 20px;
+    gap: 28px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .ctaCircle {
+    width: 110px;
+    height: 110px;
+  }
+
+  .ctaText {
+    font-size: 12px;
+  }
+
+  .contactValue {
+    font-size: 14px;
+  }
+}

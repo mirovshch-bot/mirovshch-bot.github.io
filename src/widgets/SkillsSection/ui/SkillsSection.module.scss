@@ -1,0 +1,132 @@
+/* ----- Блок: skillsSection (корневой контейнер) ----- */
+.skillsSection {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 66px 133px;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ----- Элемент: header (шапка) ----- */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 115px;
+  min-height: 200px;
+  text-align: center;
+}
+
+.title {
+  color: #fff;
+  font-size: 140px;
+  font-weight: 400;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* ----- Элемент: grid (основная сетка) ----- */
+.grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1 0 530px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.columnCenter {
+  flex: 1 0 448px;
+}
+
+/* ----- Элемент: designBlock (блок UI/UX) ----- */
+.designBlock {
+  margin-top: 10px;
+}
+
+/* ----- Элемент: footer (футер) ----- */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  margin-top: 20px;
+}
+
+.footerBrand {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+.footerDescription {
+  max-width: 600px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  font-family: 'Inter', sans-serif;
+  text-align: right;
+  line-height: 1.4;
+}
+
+/* ----- Адаптивность (базовая) ----- */
+@media (max-width: 1200px) {
+  .skillsSection {
+    padding: 40px 60px;
+  }
+  .title {
+    font-size: 80px;
+  }
+  .grid {
+    flex-direction: column;
+  }
+  .bottomRow {
+    flex-direction: column;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .footerDescription {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .skillsSection {
+    padding: 20px 16px;
+  }
+  .title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 520px) {
+  .column {
+    flex: 1 1 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .columnCenter {
+    flex: 1 1 350px;
+  }
+
+  .header {
+    padding: 60px;
+  }
+}
