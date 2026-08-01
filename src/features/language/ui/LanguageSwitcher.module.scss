@@ -1,0 +1,266 @@
+/* LanguageSwitcher.module.css */
+
+/* ----- Блок: switcher (кнопка переключения) ----- */
+.switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-white, #ffffff);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  
+}
+
+/* Эффект свечения при наведении */
+.switcher::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.switcher:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.switcher:hover::before {
+  opacity: 1;
+}
+
+.switcher:active {
+  transform: scale(0.95);
+}
+
+/* ----- Элемент: lang (язык) ----- */
+.lang {
+  padding: 2px 4px;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ----- Элемент: lang.active (активный язык) ----- */
+.lang.active {
+  opacity: 1;
+  font-weight: 600;
+  transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* ----- Элемент: divider (разделитель) ----- */
+.divider {
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 300;
+  opacity: 0.7;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================ */
+/* ----- Адаптивность (как в frontSection) ----- */
+/* ============================================ */
+
+/* 1200px - ноутбуки */
+@media (max-width: 1200px) {
+  .switcher {
+    padding: 5px 12px;
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .lang {
+    font-size: 12px;
+  }
+}
+
+/* 992px - планшеты */
+@media (max-width: 992px) {
+  .switcher {
+    padding: 5px 12px;
+    font-size: 13px;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .switcher:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .lang {
+    font-size: 12px;
+  }
+}
+
+/* 768px - мобильные */
+@media (max-width: 768px) {
+  .switcher {
+    padding: 4px 10px;
+    font-size: 12px;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .switcher:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .lang {
+    font-size: 11px;
+    padding: 1px 3px;
+  }
+
+  .lang.active {
+    font-weight: 600;
+  }
+
+  .divider {
+    font-size: 11px;
+  }
+}
+
+/* 520px - маленькие мобильные */
+@media (max-width: 520px) {
+  .switcher {
+    padding: 3px 8px;
+    font-size: 11px;
+    gap: 4px;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-color: rgba(0, 0, 0, 0.2);
+    color: var(--color-black, #000000);
+    border-radius: 6px;
+  }
+
+  .switcher:hover {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .switcher:active {
+    transform: scale(0.95);
+  }
+
+  .lang {
+    font-size: 10px;
+    opacity: 0.6;
+  }
+
+  .lang.active {
+    opacity: 1;
+    font-weight: 700;
+    color: var(--color-black, #000000);
+    text-shadow: none;
+  }
+
+  .divider {
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 10px;
+  }
+}
+
+/* 400px - очень маленькие экраны */
+@media (max-width: 400px) {
+  .switcher {
+    padding: 2px 6px;
+    font-size: clamp(9px, 2.5vw, 11px);
+    gap: 3px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  .switcher:hover {
+    background: rgba(0, 0, 0, 0.15);
+    transform: none;
+    box-shadow: none;
+  }
+
+  .lang {
+    font-size: clamp(8px, 2vw, 10px);
+    padding: 1px 2px;
+    opacity: 0.5;
+  }
+
+  .lang.active {
+    font-weight: 700;
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .divider {
+    font-size: clamp(7px, 2vw, 9px);
+    opacity: 0.5;
+  }
+}
+
+/* ============================================ */
+/* ----- Дополнительные состояния ----- */
+/* ============================================ */
+
+/* Темная тема (автоматическая адаптация) */
+@media (prefers-color-scheme: dark) {
+  .switcher {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .switcher:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .lang.active {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Светлая тема для мобильных */
+@media (max-width: 520px) and (prefers-color-scheme: dark) {
+  .switcher {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: var(--color-white, #ffffff);
+  }
+
+  .switcher:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .lang.active {
+    color: var(--color-white, #ffffff);
+  }
+
+  .divider {
+    color: rgba(255, 255, 255, 0.2);
+  }
+}

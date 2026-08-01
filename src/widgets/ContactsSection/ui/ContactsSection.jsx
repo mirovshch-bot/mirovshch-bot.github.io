@@ -1,17 +1,40 @@
 import styles from './ContactsSection.module.scss'
+import { useLanguage } from '../../../app/providers/LanguageContext';
+
+const translations= {
+  en: {
+    subtitle: "That's all for now.",
+    title1: 'Got a project in mind?',
+    title2: "Let's talk",
+    ctaText: 'Get in touch',
+    contactLabelEmail: 'Email:',
+    contactLabelPhone: 'Phone:'
+  },
+  ru: {
+    subtitle: 'На этом пока все.',
+    title1: 'Есть проект на примете?',
+    title2: 'Давайте обсудим',
+    ctaText: 'Связаться',
+    contactLabelEmail: 'Email:',
+    contactLabelPhone: 'Телефон:'
+  }
+}
 
 const ContactsSection = () => {
+  const { language } = useLanguage()
+  const t = translations[language]
+
   return (
     <section className={styles.contactsSection}>
       <header className={styles.header}>
         <p className={styles.subtitle}>
-          That's all for now.
+          {t.subtitle}
         </p>
         <h2 className={styles.title}>
-          Got a project in mind?
+          {t.title1}
         </h2>
         <h2 className={styles.title}>
-          Let's talk
+          {t.title2}
         </h2>
       </header>
 
@@ -20,7 +43,7 @@ const ContactsSection = () => {
         <div className={styles.ctaWrapper}>
           <div className={styles.ctaCircle}>
             <span className={styles.ctaText}>
-              Get in touch
+              {t.ctaText}
             </span>
           </div>
         </div>
@@ -29,7 +52,7 @@ const ContactsSection = () => {
       <div className={styles.info}>
         <div className={styles.contact}>
           <span className={styles.contactLabel}>
-            Email:
+            {t.contactLabelEmail}
           </span>
           <a href="mailto:mirovshch@gmail.com" className={styles.contactValue}>
             mirovshch@gmail.com
@@ -37,7 +60,7 @@ const ContactsSection = () => {
         </div>
         <div className={styles.contact}>
           <span className={styles.contactLabel}>
-            Phone:
+            {t.contactLabelPhone}
           </span>
           <a href="tel:+79533207126" className={styles.contactValue}>
             +7 (953) 320-71-26

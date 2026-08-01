@@ -1,8 +1,11 @@
+import { LanguageProvider } from './providers/LanguageContext'
 import { Home } from "../pages/home"
 
 const App = () => {
   return (
-    <Home />
+    <LanguageProvider>
+      <Home />
+    </LanguageProvider>
   )
 }
 

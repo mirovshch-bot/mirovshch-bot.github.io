@@ -3,8 +3,33 @@ import { ProjectList, projectNames } from '../../../features/projects'
 import { useState } from 'react'
 import { useRef } from 'react';
 import { useEffect } from 'react';
+import { useLanguage } from '../../../app/providers/LanguageContext';
+
+const translations= {
+  en: {
+    description: 'Driven by curiosity and a passion for clean code, I build fast, responsive, and human-centered digital interfaces.',
+    moreText: 'The convergence of my drive for elegant solutions...',
+    moreLink: 'More about me',
+    gridTitle: 'My Works',
+    gridSubtitle: "HERE'S A COLLECTION OF PROJECTS THAT DEMONSTRATE MY COMMITMENT TO CLEAN CODE AND THOUGHTFUL DESIGN, BLENDING FUNCTIONALITY WITH AESTHETIC APPEAL.",
+    exploreTextMore: 'Explore more',
+    exploreTextHide: 'Hide'
+  },
+  ru: {
+    description: 'Движимый любознательностью и стремлением к чистому коду, я создаю быстрые, отзывчивые и дружелюбные цифровые интерфейсы',
+    moreText: 'Средоточие моего стремления к элегантным решениям...',
+    moreLink: 'Больше обо мне',
+    gridTitle: 'Мои Проекты',
+    gridSubtitle: 'ВОТ ПОДБОРКА ПРОЕКТОВ, ДЕМОНСТРИРУЮЩИХ МОЮ ПРИВЕРЖЕННОСТЬ ЧИСТОМУ КОДУ И ПРОДУМАННОМУ ДИЗАЙНУ, СОЧЕТАЮЩЕМУ ФУНКЦИОНАЛЬНОСТЬ С ВИЗУАЛЬНОЙ ПРИВЛЕКАТЕЛЬНОСТЬЮ.',
+    exploreTextMore: 'Больше',
+    exploreTextHide: 'Скрыть'
+  }
+}
 
 const PortfolioSection = () => {
+  const { language } = useLanguage()
+  const t = translations[language]
+
   const [showAllProjects, setShowAllProjects] = useState(false)
   const exploreButtonRef = useRef(null)
 
@@ -41,18 +66,17 @@ const PortfolioSection = () => {
     <section className={styles.portfolioSection}>
       <header className={styles.header}>
         <p className={styles.description}>
-          Driven by curiosity and a passion for clean code,
-          I build fast, responsive, and human-centered digital interfaces.
+          {t.description}
         </p>
         
         <div className={styles.more}>
           <p className={styles.moreText}>
-            The convergence of my drive for elegant solutions...
+            {t.moreText}
           </p>
           
           <div className={styles.moreLinkWrapper}>
             <span className={styles.moreLink}>
-              More about me
+              {t.moreLink}
             </span>
             <span className={styles.moreArrow}>
               <svg
@@ -75,11 +99,10 @@ const PortfolioSection = () => {
       <div className={styles.content}>
         <div className={styles.gridHeader}>
           <h2 className={styles.gridTitle}>
-            My Works
+            {t.gridTitle}
           </h2>
           <p className={styles.gridSubtitle}>
-            HERE'S A COLLECTION OF PROJECTS THAT DEMONSTRATE MY COMMITMENT TO CLEAN CODE AND
-            THOUGHTFUL DESIGN, BLENDING FUNCTIONALITY WITH AESTHETIC APPEAL.
+            {t.gridSubtitle}
           </p>
         </div>
 
@@ -107,14 +130,14 @@ const PortfolioSection = () => {
                 </svg>
               </span>
               <span className={styles.exploreText}>
-                {showAllProjects ? 'Hide' : 'Explore more'}
+                {showAllProjects ? t.exploreTextHide : t.exploreTextMore}
               </span>
             </button>
           </div>
         )}
       </div>
     </section>
-  );
-};
+  )
+}
 
 export default PortfolioSection

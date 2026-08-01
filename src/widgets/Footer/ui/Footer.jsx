@@ -1,11 +1,24 @@
+import { useLanguage } from '../../../app/providers/LanguageContext';
 import styles from './Footer.module.scss'
 
+const translations= {
+  en: {
+    text: 'your friendly interface creator'
+  },
+  ru: {
+    text: 'ваш дружелюбный фронтенд разработчик'
+  }
+}
+
 const Footer = () => {
+  const { language } = useLanguage()
+  const t = translations[language]
+
   return (
     <footer className={styles.footerSection}>
       <div className={styles.top}>
         <p className={styles.text}>
-          your friendly interface creator
+          {t.text}
         </p>
         <a href="#" className={styles.arrow} aria-label="Scroll to top">
           <div className={styles.circle}>
