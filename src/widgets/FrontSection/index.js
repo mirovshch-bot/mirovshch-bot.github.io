@@ -1,1 +1,0 @@
-export {default as FrontSection} from './ui/FrontSection.jsx'

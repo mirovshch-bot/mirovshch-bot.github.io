@@ -1,1 +1,0 @@
-export { default as SkillIcon } from './ui/SkillIcon'
