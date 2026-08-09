@@ -8,27 +8,32 @@ export const PROJECTS = {
   learnlogicify: {
     id: 1,
     title: "Learnlogicify Landing Page",
-    image: Project1
+    image: Project1,
+    link: '/'
   },
   winzee: {
     id: 2,
     title: "Winzee Web Chat application",
-    image: Project2
+    image: Project2,
+    link: '/'
   },
   chatGPT: {
     id: 3,
     title: "ChatGPT clone",
-    image: Project3
+    image: Project3,
+    link: '/'
   },
   gemini: {
     id: 4,
     title: "Gemini Clone",
-    image: Project4
+    image: Project4,
+    link: '/'
   },
   todo: {
     id: 5,
     title: "Todo List",
-    image: ProjectTodo
+    image: ProjectTodo,
+    link: 'https://mirovshch-bot.github.io/todo-react/'
   }
 }
 

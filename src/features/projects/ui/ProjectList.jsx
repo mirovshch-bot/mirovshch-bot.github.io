@@ -26,7 +26,7 @@ const ProjectList = (props) => {
                     <ProjectCard
                         title={project.title}
                         image={project.image}
-                        onClick={() => {console.log("click")}}
+                        link={project.link}
                         key={name}
                         styles={styles}
                         isHidden={isHidden}
